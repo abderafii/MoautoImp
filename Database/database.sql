@@ -36,7 +36,7 @@ create table Supplier(
  SupID Serial PRIMARY KEY,
  SupName varchar(25) not null,
  SupAddress varchar(25),
- SupPhone char(8) not null,
+ SupPhone varchar(15) not null,
  DebtToSup int not null DEFAULT 0
 );
 
@@ -44,7 +44,7 @@ create table Representative(
  RepID Serial PRIMARY KEY,
  RepFname varchar(15) not null,
  RepLname varchar(15) not null,
- RepPhone char(8) not null,
+ RepPhone varchar(15) not null,
  SupID int,
  CONSTRAINT Hires FOREIGN KEY (SupID) REFERENCES Supplier(SupID)
                       ON UPDATE CASCADE ON DELETE CASCADE
@@ -56,7 +56,7 @@ create table Customer(
  CusLname varchar(15) not null,
  Cusemail varchar(255) unique not null,
  CusPassword varchar(255) not null,
- CusPhone char(15) unique not null,
+ CusPhone varchar(15) unique not null,
  CusBalance decimal(8, 2) DEFAULT 0,
  CusAddress varchar(25)
 );
