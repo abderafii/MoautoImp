@@ -11,28 +11,32 @@ if (isset($_POST['password']) && isset($_POST['email'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
+
     //Needed queries to get variables
-    $Check = " Select cusbalance from Customer where Cusemail = :email and cusPassword = :password";
+    $Check = " Select distinct customer_invoice.invoiceid, line.cartid from Customer natural join customer_invoice natural join line where Cusemail = :email and cusPassword = :password";
 
      //prepare queries and bind values
     $stmt = $db_conn->prepare($Check);
     $stmt->bindValue(":email", $email);
     $stmt->bindValue(":password", $password);
+    
 
     //executing and error handling
     if ($stmt->execute()) {
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $user = $stmt->fetch();
         if ($user) {
-            $balance = $user['cusbalance'];
-            $_SESSION['customerbalance'] = $balance;
-            require("totalamount.php");
+            $invoiceid = $user[0];
+            $cartid = $user[1];
+            $_SESSION['invoiceid'] = $invoiceid;
+            $_SESSION['cartid'] = $cartid;
+            require("cart.php");
         } else {
-            readfile("failtotal.html");
+            readfile("failedcartauth.html");
         }
     } else {
         echo $stmt->error;
     }
 } else {
-    echo "All field are required.";
+    readfile("failedcartauth.html");
     die();
 }

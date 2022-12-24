@@ -30,12 +30,7 @@ if (isset($_POST['num'])) {
     //executing and error handling
     if ($stmt->execute()) {
         $user = $stmt->fetch();
-        if ($user) {
-            readfile("shopagain.html");
-        } else {
-            readfile("shopagain.html");;
-        }
-        session_destroy();
+        readfile('shopagain.html');
     } else {
         echo $stmt->error;
     }

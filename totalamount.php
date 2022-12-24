@@ -6,44 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <title>MOAUTO | About</title>
+    <title>MOAUTO | Cart</title>
     <link rel="icon" type="image/x-icon" href="Images/car.png">
 </head>
 <body>
 
     <header>
-        <a href="indexs.html" class="logo"><img src="Images/MOAUTO 100.png" alt="MOAUTO Logo"></a>
+        <a href="index.html" class="logo"><img src="Images/MOAUTO 100.png" alt="MOAUTO Logo"></a>
         <div>
             <ul id="navigation">
-                <li><a href="indexs.html">Home</a></li>
-                <li><a href="Shops.html">Shop</a></li>
-                <li><a class="active" href="Abouts.html">About Us</a></li>
-                <li><a href="Contacts.html">Contact Us</a></li>
-                <li><a href="cartauth.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Contact.html">Contact Us</a></li>
+                <li><a class="active" href="total.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="User.html"><i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
             </ul>
         </div>
     </header>
 
-    <section id="About-header">
-        <h2 class="text2">Know more about us</h2>
-    </section>
+    <section id="create" class="padding1">
 
-    <section id="About-head" class="padding1">
-        <img src="Images/abouttt.jpg" alt="">
         <div>
-            <h2>Who are we?</h2>
-            <p>MOAuto is managed by Mr. Mohammed Abdou, an honest and helpful bussinessman, We are always welcoming your input in order to enhance our services and be at your expectations.</p>
+
+            <div>
+                <form method="POST" action="total.php">
+                    <div>
+                        <h2 class="text1">Your Total Amount: <?php @session_start(); echo $_SESSION['customerbalance']." MAD"; ?> </h2>
+                    
+                        <div>
+                </form>
+            </div>
         </div>
+
     </section>
 
     <footer class="padding1">
         <div class="col">
             <img src="Images/MOAUTO 100.png" alt="MOAUTO Logo">
             <h4>Contact</h4> <br>
-            <p><strong>Address: </strong> 7 Rue 23, Casablanca 20600</p>          
+            <p><strong>Address: </strong> 7 Rue 23, Casablanca 20600</p>
             <p><strong>Phone:</strong> 05 22 73 24 21</p>
             <p><strong>Hours:</strong> Monday to Saturday 8:00 am to 8:00 pm</p>
-            
+
         </div>
 
         <div class="col">
@@ -66,6 +71,7 @@
         </div>
 
     </footer>
-    
+
 </body>
+
 </html>

@@ -33,14 +33,9 @@ if (isset($_POST['num'])) {
     $stmt->bindValue(":linetotalamount", $linehistoricalprice);
 
     //executing and error handling
-
     if ($stmt->execute()) {
         $user = $stmt->fetch();
-        if ($user) {
-            readfile("shopagain.html");
-        } else {
-            readfile("shopagain.html");;
-        }
+        readfile('shopagain.html');
     } else {
         echo $stmt->error;
     }

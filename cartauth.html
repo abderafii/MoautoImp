@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <title>MOAUTO | About</title>
+    <title>MOAUTO | Login</title>
     <link rel="icon" type="image/x-icon" href="Images/car.png">
 </head>
+
 <body>
 
     <header>
@@ -17,33 +19,41 @@
             <ul id="navigation">
                 <li><a href="indexs.html">Home</a></li>
                 <li><a href="Shops.html">Shop</a></li>
-                <li><a class="active" href="Abouts.html">About Us</a></li>
+                <li><a href="Abouts.html">About Us</a></li>
                 <li><a href="Contacts.html">Contact Us</a></li>
-                <li><a href="cartauth.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a class="active" href="total.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
         </div>
     </header>
 
-    <section id="About-header">
-        <h2 class="text2">Know more about us</h2>
-    </section>
+    <section id="create" class="padding1">
 
-    <section id="About-head" class="padding1">
-        <img src="Images/abouttt.jpg" alt="">
         <div>
-            <h2>Who are we?</h2>
-            <p>MOAuto is managed by Mr. Mohammed Abdou, an honest and helpful bussinessman, We are always welcoming your input in order to enhance our services and be at your expectations.</p>
+
+            <div>
+                <form method="POST" action="cartauth.php">
+                    <div>
+                        <h2 class="text1">Your Invoice</h2>
+                        <ul>
+                            <li><input type="text" placeholder="Enter your email" name="email"></li>
+                            <li><input type="text" placeholder="Enter your password" name="password"></li>
+                            <li><button class="normal">Get Invoice</button></li>
+                        </ul>
+                        <div>
+                </form>
+            </div>
         </div>
+
     </section>
 
     <footer class="padding1">
         <div class="col">
             <img src="Images/MOAUTO 100.png" alt="MOAUTO Logo">
             <h4>Contact</h4> <br>
-            <p><strong>Address: </strong> 7 Rue 23, Casablanca 20600</p>          
+            <p><strong>Address: </strong> 7 Rue 23, Casablanca 20600</p>
             <p><strong>Phone:</strong> 05 22 73 24 21</p>
             <p><strong>Hours:</strong> Monday to Saturday 8:00 am to 8:00 pm</p>
-            
+
         </div>
 
         <div class="col">
@@ -66,6 +76,7 @@
         </div>
 
     </footer>
-    
+
 </body>
+
 </html>

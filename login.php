@@ -36,7 +36,7 @@ if (isset($_POST['password']) && isset($_POST['email'])) {
   if (!$stmt2) { 
     die("Error: ..");
     }
-    $customerid = $row['cusid'];
+    @$customerid = $row['cusid'];
     if ($stmt->execute()) {
         $user = $stmt->fetch();
         if ($user) {
